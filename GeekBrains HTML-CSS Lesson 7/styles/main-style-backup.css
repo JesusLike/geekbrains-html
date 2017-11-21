@@ -1,0 +1,538 @@
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
+/*
+Не до конца сработанная версия, готовая на момент вечера 18.11.16
+Отправляю на всякий случай, если не успею доделать до занятия или случится какой-нибудь форс-мажор.
+
+Добавил что-то похожее на окно просмотра изображения при клике на картинку на странице просмотра товара.
+Наверное, это большое извращение на css, но мне было интересно и вроде работает.
+*/
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	width: 1265px;
+	margin: 0 auto;
+	font-family: "Quicksand", sans-serif;
+	font-size: 10pt;
+}
+
+/*header*/
+.header {
+	padding-top: 54px;
+	padding-left: 64px;
+	height: 480px;
+	background-image: url("../img/header-bg-muted.jpg");
+	color: white;
+}
+
+.logo {
+	float: left;
+	height: 64px;
+	margin-top: -14px;
+}
+
+.menu {
+	float: right;
+}
+
+.menu li {
+	height: 40px;
+	display: inline-block;
+	margin-right: 54px;
+}
+
+.menu a:link, .menu a:active, .menu a:visited {
+	font-size: 9pt;
+	font-weight: bold;
+	color: white;
+}
+
+.title {
+	clear: both;
+	margin-top: 146px;
+	text-align: center;
+}
+
+.title h1 {
+	font-size: 30pt;
+	line-height: 68px;
+	font-weight: bold;
+}
+
+/*content*/
+.nav {
+	height: 85px;
+	padding: 23px 96px 0 96px;
+	background-color: #f5f6f7;
+	font-size: 9pt;
+	text-align: center;
+}
+
+.nav li {
+	display: inline-block;
+	height: 31px;
+	width: 180px;
+	padding-top: 9px;
+	margin-right: 30px;
+	border: 2px solid #aa9b77;
+	border-radius: 2px;
+}
+
+.all-books {
+	background-color: #aa9b77;
+	color: white;
+	width: 204px;
+	float: right;
+}
+
+.nav a:link, .nav a:active, .nav a:visited {
+	color: #333333;
+	font-weight: bold;
+}
+
+.cat-title {
+	font-size: 10pt;
+	color: #424242;
+	margin-left: 98px;
+	margin-top: 53px;
+	margin-bottom: 58px;
+}
+
+.catalog {
+	text-align: center;
+}
+
+.catalog-item {
+	display: inline-block;
+	vertical-align: top;
+	width: 320px;
+	height: 377px;
+	padding: 22px 18px;
+	margin-right: 64px;
+	margin-bottom: 79px;
+	background-color: #f5f6f7;
+
+	border-width: 6px;
+	border-radius: 2px;
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 0);
+}
+
+.catalog-item:nth-child(3n) {
+	margin-right: 0;
+}
+
+.catalog-item:hover {
+	border-color: #aa9b77;
+}
+
+.catalog-item img {
+	margin: 0 auto 52px;
+	
+}
+
+.empty-cat {
+	font-size: 11pt;
+	margin-left: 150px;
+	margin-bottom: 58px;
+	color: #aa9b77;
+}
+
+.book-name {
+	font-size: 11pt;
+	font-weight: bold;
+	color: #aa9b77;
+	margin-bottom: 54px;
+}
+
+.price {
+	font-size: 11pt;
+	color: #424242;
+}
+
+.item-title {
+	font-size: 11pt;
+	font-weight: bold;
+	color: #aa9b77;
+	margin-left: 98px;
+	margin-top: 53px;
+	margin-bottom: 58px;
+}
+
+.desc {
+	color: #424242;
+	width: 1020px;
+	background-color: #f5f6f7;
+	margin: 0 auto 58px;
+	padding: 20px;
+	text-align: center;
+}
+
+.short-desc {
+	font-size: 11pt;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.det-desc {
+	text-align: left;
+}
+
+.det-desc div {
+	margin: 7px 0;
+}
+
+.det-desc div:first-letter {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+.image {
+	float: left;
+	height: inherit;
+	width: 248px;
+	margin: 32px 10px 32px;
+}
+
+.chars-title {
+	clear: both;
+	font-size: 11pt;
+	font-weight: bold;
+	color: #aa9b77;	
+	margin-left: 98px;
+	margin-bottom: 20px !important;
+}
+
+.chars p {
+	margin-bottom: 10px;
+}
+
+.chars ul {
+	margin-left: 150px;
+	list-style: circle;
+}
+
+.chars-item {
+	color: #424242;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.chars-content {
+	font-size: 10pt;
+	color: #424242;
+	padding-left: 20px;
+}
+
+
+/*marktable*/
+.marks {
+	border-collapse: collapse;
+	color: #424242;/*
+	margin-top: 20px;
+	margin-bottom: 58px;
+	margin-left: 130px;*/
+	margin: 20px auto 58px;
+	text-align: center;
+}
+
+.marks td, .marks th {
+	background-color: #f5f6f7;
+	vertical-align: middle;
+	border: 2px solid #333333;
+}
+
+.marks td {
+	width: 40px;
+	height: 40px;
+}
+
+.marks th {
+	height: 30px;
+}
+
+.marks th:first-child {
+	border: none;
+	background: none;
+}
+
+.marks td:first-child {
+	padding: 10px;
+	width: 200px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.eckel .actuality td:nth-child(5),
+.eckel .simplicity td:nth-child(4),
+.eckel .attractiveness td:nth-child(6) {
+	background: url("../img/checkmark.svg") 50% 50% no-repeat;
+}
+
+.strous .actuality td:nth-child(4),
+.strous .simplicity td:nth-child(5),
+.strous .attractiveness td:nth-child(4) {
+	background: url("../img/checkmark.svg") 50% 50% no-repeat;
+}
+
+.summer .actuality td:nth-child(6),
+.summer .simplicity td:nth-child(6),
+.summer .attractiveness td:nth-child(4) {
+	background: url("../img/checkmark.svg") 50% 50% no-repeat;
+}
+
+.rating {
+	height: 60px;
+}
+
+.rating td:last-child {
+	font-weight: bold;
+	font-size: 36px;
+}
+/*end of marktable*/
+
+.buy input {
+	outline: none;
+	margin-left: 98px;
+	margin-bottom: 58px;
+	background-color: #aa9b77;
+	border: none;
+	border-radius: 2px;
+	height: 64px;
+	width: 204px;	
+
+	font-family: Quicksand;
+	font-size: 13pt;
+	font-weight: bold;
+	color: white;
+}
+
+.buy input:hover {
+	cursor: pointer;
+	box-shadow: 2px 2px 4px #333333;
+}
+
+.buy input:active {
+	box-shadow: 1px 1px 1px #424242;
+}
+
+/*footer*/
+.quote {
+	height: 243px;
+	background-color: #aa9b77;
+	padding-top: 46px;
+}
+
+.quote-text {
+	height: 151px;
+	width: 710px;
+	margin: 0 auto;
+	border: 2px solid #918363;
+	color: #424242;
+	text-align: center;
+	padding-top: 56px;
+}
+
+cite {
+	line-height: 30px;
+	font-style: italic;
+}
+
+.social {
+	height: 43px;
+	background-color: #535253;
+	text-align: center;
+}
+
+.social li {
+	display: inline-block;
+	margin-right: 15px;
+	margin-top: 6px;
+}
+
+.rights {
+	height: 213px;
+	padding: 66px 64px 0 64px;
+	background-color: #424242;
+	color: white;
+}
+
+.reserved {
+	float: left;
+}
+
+.autor {
+	float: right;
+}
+
+.visor {
+	display: none;
+}
+
+#visor-check {
+	display: none;
+}
+
+label img {
+	cursor: pointer;
+}
+
+#visor-check:checked + .mute + .visor {
+	display: table-cell;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -280px;
+	margin-left: -200px;
+	min-height: 560px;
+	min-width: 400px;
+
+	background-color:#f5f6f7;
+
+	border: 6px solid #aa9b77;
+	border-radius: 10px;
+
+	text-align: center;
+	padding: 100px 0;
+}
+
+.mute div {
+	display: none;
+}
+
+#visor-check:checked + .mute {
+	display: block;	
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.4;
+}
+
+.close {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	height: 26px;
+	width: 26px;
+	background-image: url("../img/close.svg");
+}
+
+.close:hover {
+	cursor: pointer;
+}
+
+.visor img {
+	max-height: 360px;
+	max-width: 300px;
+}
+
+fieldset {
+	width: 960px;
+	margin: 0 auto 58px;
+	padding: 20px;
+	border: 6px solid #aa9b77;
+	border-radius: 10px;
+	background-color: #f5f6f7;
+}
+
+.form-title {
+	font-size: 11pt;
+	font-weight: bold;
+	color: #aa9b77;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.form-title + input, .message {
+	font-size: 9pt;
+	line-height: 13pt;
+	color: #424242;
+	margin-left: 40px;
+	margin-bottom: 32px;
+	border-radius: 3px;
+	width: 260px;
+	box-shadow: none;
+	border: 1px solid #333333;
+}
+
+.form-title + input {
+	padding-left: 5px;
+}
+
+.name {
+	text-transform: capitalize;
+}
+
+.email {
+	font-weight: bold;
+}
+
+.message {
+	width: 360px;
+}
+
+.address_title {
+	margin-left: 98px;
+	font-size: 11pt;
+	color: #424242;
+	margin-bottom: 20px;
+}
+
+.address {
+	margin-left: 150px;
+	margin-bottom: 58px;
+}
+
+.map img {
+	margin-bottom: 20px;
+	width: 480px;
+	border-radius: 10px;
+}
+
+.address-content {
+	font-size: 10pt;
+	color: #424242;
+	margin-bottom: 20px;
+}
+
+i {
+	font-style: italic;
+}
+
+.submit {
+	outline: none;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	background-color: #aa9b77;
+	border: none;
+	border-radius: 2px;
+	height: 52px;
+	width: 180px;	
+
+	font-family: Quicksand;
+	font-size: 13pt;
+	font-weight: bold;
+	color: white;
+}
+
+.submit:hover {
+	cursor: pointer;
+	box-shadow: 2px 2px 4px #333333;
+}
+
+.submit:active {
+	box-shadow: 1px 1px 1px #424242;
+}
